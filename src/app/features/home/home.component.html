@@ -1,0 +1,50 @@
+<app-header></app-header>
+
+<main>
+  <form (submit)="onSubmit($event)">
+    <h1>{{ title }}</h1>
+
+    <label>
+      Book:
+      <input
+        type="text"
+        placeholder="book"
+        [value]="bookQuery()"
+        (input)="bookQuery.set($any($event.target).value)"
+      />
+    </label>
+
+    <button type="submit">submit</button>
+  </form>
+
+  <h1>{{ bookQuery() }}</h1>
+
+
+  <br><br><br>
+
+
+  <div>
+    <button (click)="prevPage()" [disabled]="currentPage() === 1"> <- </button>
+    <span>{{ currentPage() }}</span>
+    <button (click)="nextPage()" [disabled]="currentPage() === MAX_PAGE"> -> </button>
+  </div>
+
+  <br><br><br>
+
+  <p>books: {{books().length}}</p>
+
+  <br><br><br>
+
+  @if (books().length !== 0) {
+    <ul>
+      @for (book of books(); track book.key) {
+        <li>{{ book.title }}</li>
+        <li>{{ book.author_name }}</li>
+        <li>{{book.first_publish_year }}</li>
+        <li><img [src]="'https://covers.openlibrary.org/b/id/' + book.cover_i + '-M.jpg'" alt=""></li>
+      }
+    </ul>
+  }
+
+
+</main>
