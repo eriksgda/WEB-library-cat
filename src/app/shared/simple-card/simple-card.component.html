@@ -1,0 +1,16 @@
+<div class="cover-wrapper">
+  <img
+    [src]="coverSrc"
+    (load)="onLoad()"
+    (error)="onError($event)"
+    [class.hidden]="!coverLoaded"
+    alt="book cover"
+  >
+  @if (!coverLoaded) {
+    <div class="cover-loading"></div>
+  }
+</div>
+<div class="card-content">
+  <h1>{{ title || "title not found" }}</h1>
+  <h2>{{ author_name || "author not found" }} - {{ first_publish_year || "published year not found" }}</h2>
+</div>
