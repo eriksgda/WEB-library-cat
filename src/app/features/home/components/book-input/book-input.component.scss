@@ -1,0 +1,32 @@
+.book-input {
+  input {
+    width: 60%;
+    padding: 12px;
+    border-radius: 8px;
+
+    border: none;
+
+    box-shadow: 0 0 10px 0 #ccc;
+
+    &:focus {
+      outline: 1px solid #323232;
+    }
+  }
+
+  button {
+    padding: 12px 24px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+
+    color: #fff;
+    background-color: #000;
+
+    transition: transform 0.2s ease;
+
+    &:hover {
+      background-color: #323232;
+      transform : scale(1.1);
+    }
+  }
+}

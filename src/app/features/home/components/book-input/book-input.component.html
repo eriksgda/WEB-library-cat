@@ -1,0 +1,9 @@
+<form (submit)="onSubmit($event)" class="book-input">
+  <input
+    type="text"
+    placeholder="Type a book name to search..."
+    [value]="bookQuery()"
+    (input)="bookQuery.set($any($event.target).value)"
+  />
+  <button type="submit">Search</button>
+</form>
