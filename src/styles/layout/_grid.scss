@@ -1,0 +1,17 @@
+.book-input {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+
+  margin: 40px;
+}
+
+.books-container {
+  display: flex;
+  flex-direction: row;
+
+  justify-content: space-around;
+
+  height: 400px;
+}
