@@ -11,4 +11,12 @@ export class BooksService {
   searchBooks(type: string, query: string, page: number) {
     return this.bookApiService.searchBooks(type, query, page);
   }
+
+  getBookDetails(key: string) {
+    return this.bookApiService.getBookDetails(key);
+  }
+
+  getAuthorDetails(key: string) {
+    return this.bookApiService.getAuthorDetails(key);
+  }
 }
