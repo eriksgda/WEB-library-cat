@@ -1,4 +1,5 @@
 import {Component, Input} from '@angular/core';
+import {RawBookModel} from '../../core/models/raw-book.model';
 
 @Component({
   selector: 'app-simple-card',
@@ -7,17 +8,14 @@ import {Component, Input} from '@angular/core';
   styleUrl: './simple-card.component.scss'
 })
 export class SimpleCardComponent {
-  @Input() public title?: string;
-  @Input() public author_name?: string;
-  @Input() public first_publish_year?: number;
-  @Input() public cover_i?: string;
+  @Input() public rawBook!: RawBookModel;
 
   public coverLoaded: boolean = false;
   public coverSrc: string = "";
 
   ngOnInit() {
-    this.coverSrc = this.cover_i
-      ? `https://covers.openlibrary.org/b/id/${this.cover_i}-M.jpg`
+    this.coverSrc = this.rawBook.cover_i
+      ? `https://covers.openlibrary.org/b/id/${this.rawBook.cover_i}-M.jpg`
       : 'assets/book-placeholder.jpg';
   }
 

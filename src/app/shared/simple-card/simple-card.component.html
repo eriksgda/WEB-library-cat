@@ -11,6 +11,6 @@
   }
 </div>
 <div class="card-content">
-  <h1>{{ title || "title not found" }}</h1>
-  <h2>{{ author_name || "author not found" }} - {{ first_publish_year || "published year not found" }}</h2>
+  <h1>{{ rawBook.title || "title not found" }}</h1>
+  <h2>{{ rawBook.author_name || "author not found" }} - {{ rawBook.first_publish_year || "published year not found" }}</h2>
 </div>
