@@ -1,0 +1,44 @@
+<div class="book-details-container">
+  <div class="book-cover-wrapper">
+    <img
+      [src]="bookCoverSrc"
+      (load)="onBookLoad()"
+      (error)="onError($event)"
+      [class.hidden]="!bookCoverLoaded"
+      alt="book cover"
+    >
+
+    @if (!bookCoverLoaded) {
+      <div class="cover-loading"></div>
+    }
+  </div>
+  <div class="book-details-content">
+    <h1>{{ book.title }} - {{ year === -1 ? "NO YEAR" : year }}</h1>
+    <p>{{ parsedDescription }}</p>
+    <div class="subjects-wrapper">
+      @for (subject of book.subjects?.slice(0, 8); track subject) {
+        <span>{{ subject }}</span>
+      }
+    </div>
+  </div>
+</div>
+<div class="author-details-container">
+  <div class="author-cover-wrapper">
+    <img
+      [src]="authorCoverSrc"
+      (load)="onAuthorLoad()"
+      (error)="onError($event)"
+      [class.hidden]="!authorCoverLoaded"
+      alt="book cover"
+    >
+
+    @if (!authorCoverLoaded) {
+      <div class="cover-loading"></div>
+    }
+  </div>
+  <div class="author-details-content">
+    <h1>{{ author.name }} - {{ author.birth_date }}</h1>
+    <h2>{{ author.personal_name }}</h2>
+    <p>{{ parsedBio }}</p>
+  </div>
+</div>
