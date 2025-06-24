@@ -1,0 +1,5 @@
+<button (click)="firstPage()" [disabled]="currentPage() === 1"> <<- </button>
+<button (click)="prevPage()" [disabled]="currentPage() === 1"> <- </button>
+<span>{{ currentPage() }}</span>
+<button (click)="nextPage()" [disabled]="currentPage() === MAX_PAGE"> -> </button>
+<button (click)="lastPage()" [disabled]="currentPage() === MAX_PAGE"> ->> </button>
