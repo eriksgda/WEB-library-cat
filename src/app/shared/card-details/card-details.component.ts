@@ -1,4 +1,4 @@
-import {Component, Input} from '@angular/core';
+import {Component, EventEmitter, Input, Output, SimpleChanges} from '@angular/core';
 import {BookModel} from '../../core/models/book.model';
 import {AuthorModel} from '../../core/models/author.model';
 
@@ -10,9 +10,21 @@ import {AuthorModel} from '../../core/models/author.model';
 })
 export class CardDetailsComponent {
 
+  public isOnWishlist: boolean = false;
+
+  toggleWishlist() {
+    this.isOnWishlist = !this.isOnWishlist;
+  }
+
   @Input() public book!: BookModel;
   @Input() public author!: AuthorModel;
   @Input() public year!: number;
+
+  @Output() public close = new EventEmitter<void>();
+
+  onClose() {
+    this.close.emit();
+  }
 
   get parsedDescription(): string {
     if (typeof this.book?.description === 'string') return this.book.description;
@@ -31,14 +43,20 @@ export class CardDetailsComponent {
   public authorCoverLoaded: boolean = false;
   public authorCoverSrc: string = "";
 
-  ngOnInit() {
-    this.bookCoverSrc = this.book.covers[0]
-      ? `https://covers.openlibrary.org/b/id/${this.book.covers[0]}-L.jpg`
-      : 'assets/book-placeholder.jpg';
+  ngOnChanges(changes: SimpleChanges): void {
+    if (changes['book']) {
+      this.bookCoverLoaded = false;
+      this.bookCoverSrc = this.book?.covers?.[0]
+        ? `https://covers.openlibrary.org/b/id/${this.book.covers[0]}-L.jpg`
+        : 'assets/book-placeholder.jpg';
+    }
 
-    this.authorCoverSrc = this.author.photos[0]
-      ? `https://covers.openlibrary.org/b/id/${this.author.photos[0]}-L.jpg`
-      : 'assets/book-placeholder.jpg';
+    if (changes['author']) {
+      this.authorCoverLoaded = false;
+      this.authorCoverSrc = this.author?.photos?.[0]
+        ? `https://covers.openlibrary.org/b/id/${this.author.photos[0]}-L.jpg`
+        : 'assets/book-placeholder.jpg';
+    }
   }
 
   onBookLoad() {
