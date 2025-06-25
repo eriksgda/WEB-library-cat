@@ -4,18 +4,20 @@ import {RawBookModel} from '../../core/models/raw-book.model';
 import {BooksService} from '../../core/services/books.service';
 import {BookInputComponent} from './components/book-input/book-input.component';
 import {SimpleCardComponent} from '../../shared/simple-card/simple-card.component';
+import {AuthorModel} from '../../core/models/author.model';
+import {BookModel} from '../../core/models/book.model';
+import {PaginationComponent} from './components/pagination/pagination.component';
+import {CardDetailsComponent} from '../../shared/card-details/card-details.component';
 
 @Component({
   selector: 'app-home',
-  imports: [HeaderComponent, BookInputComponent, SimpleCardComponent],
+  imports: [HeaderComponent, BookInputComponent, SimpleCardComponent, PaginationComponent, CardDetailsComponent],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss'
 })
 export class HomeComponent {
   constructor(private bookService: BooksService) {
   }
-
-  protected MAX_PAGE: number = 20;
 
   public currentPage = signal(1);
   public books = signal<RawBookModel[]>([]);
@@ -24,6 +26,12 @@ export class HomeComponent {
   onValueReceived(value: string): void {
     this.bookQuery.set(value);
     this.currentPage.set(1);
+    this.loadBooks();
+  }
+
+  onPageChange(page: number) {
+    this.currentPage.set(page);
+
     this.loadBooks();
   }
 
@@ -38,27 +46,37 @@ export class HomeComponent {
     )
   }
 
-  nextPage() {
-    if (this.currentPage() <= this.MAX_PAGE) {
-      this.currentPage.update(value => value + 1);
-      this.loadBooks();
-    }
+  public isVisible: boolean = false;
+  public bookDetails: BookModel | null = null;
+  public authorDetails: AuthorModel | null = null;
+  public year: number = -1;
+
+  onBookClick(book: RawBookModel) {
+
+    this.bookService.getBookDetails(book.key).subscribe(
+      next => {
+        this.bookDetails = next;
+      }
+    );
+
+    this.bookService.getAuthorDetails(book.author_key[0]).subscribe(
+      next => {
+        this.authorDetails = next;
+      }
+    );
+
+    this.year = book.first_publish_year ?? -1;
+
+    setTimeout(() => {
+      this.isVisible = true;
+    }, 50);
   }
 
-  lastPage() {
-    this.currentPage.set(this.MAX_PAGE);
-    this.loadBooks();
+  closeModal() {
+    this.isVisible = false;
+    this.bookDetails = null;
+    this.authorDetails = null;
+    this.year = -1;
   }
 
-  prevPage() {
-    if (this.currentPage() > 1) {
-      this.currentPage.update(value => value - 1);
-      this.loadBooks();
-    }
-  }
-
-  firstPage() {
-    this.currentPage.set(1);
-    this.loadBooks();
-  }
 }
