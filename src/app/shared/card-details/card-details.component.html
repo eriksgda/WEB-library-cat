@@ -1,9 +1,9 @@
 <div class="buttons-bar">
   <button class="close-button" (click)="onClose()">&#x2715;</button>
-  @if (!isOnWishlist) {
-    <button class="wishlist-button add" (click)="toggleWishlist()">Add to Wishlist</button>
+  @if (!isInWishlist()) {
+    <button class="wishlist-button add" (click)="addBookToWishlist()">Add to Wishlist</button>
   } @else {
-    <button class="wishlist-button remove" (click)="toggleWishlist()">Remove from Wishlist</button>
+    <button class="wishlist-button remove" (click)="removeBookFromWishlist()">Remove from Wishlist</button>
   }
 </div>
 <div class="book-details-container">

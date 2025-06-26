@@ -1,6 +1,8 @@
-import {Component, EventEmitter, Input, Output, SimpleChanges} from '@angular/core';
+import {Component, EventEmitter, Input, Output, signal, SimpleChanges} from '@angular/core';
 import {BookModel} from '../../core/models/book.model';
 import {AuthorModel} from '../../core/models/author.model';
+import {WishlistService} from '../../infrastructure/storage/wishlist.service';
+import {WishlistItemsModel} from '../../core/models/wishlist-items.model';
 
 @Component({
   selector: 'app-card-details',
@@ -10,10 +12,39 @@ import {AuthorModel} from '../../core/models/author.model';
 })
 export class CardDetailsComponent {
 
-  public isOnWishlist: boolean = false;
+  constructor(private wishlistService: WishlistService) { }
 
-  toggleWishlist() {
-    this.isOnWishlist = !this.isOnWishlist;
+  public isInWishlist = signal(false);
+
+  ngOnInit() {
+    const item: WishlistItemsModel = {
+      book: this.book,
+      author: this.author,
+      year: this.year,
+    }
+    this.isInWishlist.set(this.wishlistService.isInWishlist(item));
+  }
+
+  addBookToWishlist() {
+    const item: WishlistItemsModel = {
+      book: this.book,
+      author: this.author,
+      year: this.year,
+    }
+
+    this.wishlistService.addBookToWishlist(item);
+    this.isInWishlist.set(true);
+  }
+
+  removeBookFromWishlist() {
+    const item: WishlistItemsModel = {
+      book: this.book,
+      author: this.author,
+      year: this.year,
+    }
+
+    this.wishlistService.removeBookFromWishlist(item);
+    this.isInWishlist.set(false);
   }
 
   @Input() public book!: BookModel;
