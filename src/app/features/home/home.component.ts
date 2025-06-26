@@ -1,5 +1,4 @@
 import {Component, signal} from '@angular/core';
-import {HeaderComponent} from '../../shared/header/header.component';
 import {RawBookModel} from '../../core/models/raw-book.model';
 import {BooksService} from '../../core/services/books.service';
 import {BookInputComponent} from './components/book-input/book-input.component';
@@ -11,7 +10,7 @@ import {CardDetailsComponent} from '../../shared/card-details/card-details.compo
 
 @Component({
   selector: 'app-home',
-  imports: [HeaderComponent, BookInputComponent, SimpleCardComponent, PaginationComponent, CardDetailsComponent],
+  imports: [BookInputComponent, SimpleCardComponent, PaginationComponent, CardDetailsComponent],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss'
 })
