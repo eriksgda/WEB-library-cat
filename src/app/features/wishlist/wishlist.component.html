@@ -1,0 +1,21 @@
+<main>
+  @if (items().length !== 0) {
+    @for (item of items(); track item.book.key) {
+      <app-wishlist-card
+        [item]="item"
+        (remove)="removeOnClick(item)"
+        (click)="onBookClick(item)"
+      ></app-wishlist-card>
+    }
+  }
+
+  @if (isVisible && item) {
+    <div class="overlay" (click)="closeModal()"></div>
+    <app-card-details
+      [book]="item.book"
+      [author]="item.author"
+      [year]="item.year"
+      (close)="closeModal()"
+    ></app-card-details>
+  }
+</main>
