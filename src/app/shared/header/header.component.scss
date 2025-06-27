@@ -5,18 +5,18 @@
   .logo-container{
     .logo{
       height: 100%;
-      width: 60px;
+      width: 3.5rem;
     }
 
     h1{
-      font-size: 20px;
+      font-size: 1.4rem;
       color: #fff;
     }
   }
 
   .nav-container{
     span{
-      font-size: 12px;
+      font-size: 1rem;
       color: #fff;
     }
 
@@ -25,10 +25,9 @@
       text-align: center;
 
       flex: 1;
-      padding: 18px;
+      padding: 1.2rem;
       border-radius: 8px;
 
-      font-size: 16px;
       color: #fff;
 
       transition: transform 0.2s ease;

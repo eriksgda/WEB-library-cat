@@ -2,9 +2,9 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 10px;
+  gap: 1rem;
 
-  margin: 40px;
+  margin: 2.5rem;
 }
 
 .books-container {
@@ -12,6 +12,4 @@
   flex-direction: row;
 
   justify-content: space-around;
-
-  height: 400px;
 }
