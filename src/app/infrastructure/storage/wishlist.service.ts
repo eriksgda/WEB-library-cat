@@ -19,13 +19,13 @@ export class WishlistService {
 
   removeBookFromWishlist(wishlistItem: WishlistItemsModel) {
     let wishlist = JSON.parse(localStorage.getItem("wishlist") || "[]");
-    wishlist = wishlist.filter((value: WishlistItemsModel) => value !== wishlistItem);
+    wishlist = wishlist.filter((value: WishlistItemsModel) => value.book.key !== wishlistItem.book.key);
     localStorage.setItem("wishlist", JSON.stringify(wishlist));
   }
 
   isInWishlist(wishlistItem: WishlistItemsModel) {
     const wishlist = JSON.parse(localStorage.getItem("wishlist") || "[]");
-    return wishlist.includes(wishlistItem);
+    return wishlist.some((item: WishlistItemsModel) => item.book.key === wishlistItem.book.key);
   }
 
   getAllBooks(): WishlistItemsModel[] {
