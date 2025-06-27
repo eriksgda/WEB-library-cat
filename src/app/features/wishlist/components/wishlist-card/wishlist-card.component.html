@@ -1,0 +1,27 @@
+<div class="card-container">
+  <div class="book-cover-wrapper">
+    <img
+      [src]="bookCoverSrc"
+      (load)="onBookLoad()"
+      (error)="onError($event)"
+      [class.hidden]="!bookCoverLoaded"
+      alt="book cover"
+    >
+
+    @if (!bookCoverLoaded) {
+      <div class="cover-loading"></div>
+    }
+  </div>
+  <div class="card-content">
+    <h1>{{ item.book.title }}</h1>
+    <h2>{{ item.author.name }} - {{ item.year }}</h2>
+    <div class="subjects-wrapper">
+      @for (subject of item.book.subjects?.slice(0, 8); track subject) {
+        <span>{{ subject }} </span>
+      }
+    </div>
+  </div>
+  <div class="remove-button-wrapper">
+    <button (click)="onClick($event)">🗑️</button>
+  </div>
+</div>
