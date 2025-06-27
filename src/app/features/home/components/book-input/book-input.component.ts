@@ -1,4 +1,4 @@
-import {Component, EventEmitter, Input, Output, signal} from '@angular/core';
+import {Component, computed, EventEmitter, Output, signal} from '@angular/core';
 
 @Component({
   selector: 'app-book-input',
@@ -10,6 +10,8 @@ export class BookInputComponent {
   public title = 'library';
 
   public bookQuery = signal("");
+
+  isSearchDisabled = computed(() => this.bookQuery().trim() === '');
 
   @Output() public valueSubmit = new EventEmitter<string>();
 

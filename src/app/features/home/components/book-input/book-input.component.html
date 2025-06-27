@@ -5,5 +5,5 @@
     [value]="bookQuery()"
     (input)="bookQuery.set($any($event.target).value)"
   />
-  <button type="submit">Search</button>
+  <button type="submit" [disabled]="isSearchDisabled()">Search</button>
 </form>
