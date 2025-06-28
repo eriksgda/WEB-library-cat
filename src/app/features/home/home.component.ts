@@ -7,6 +7,7 @@ import {AuthorModel} from '../../core/models/author.model';
 import {BookModel} from '../../core/models/book.model';
 import {PaginationComponent} from './components/pagination/pagination.component';
 import {CardDetailsComponent} from '../../shared/card-details/card-details.component';
+import {SearchType} from '../../core/models/search-type.enum';
 
 @Component({
   selector: 'app-home',
@@ -21,9 +22,11 @@ export class HomeComponent {
   public currentPage = signal(1);
   public books = signal<RawBookModel[]>([]);
   public bookQuery = signal('');
+  public searchType = signal<SearchType>(SearchType.Title);
 
-  onValueReceived(value: string): void {
-    this.bookQuery.set(value);
+  onValueReceived(value: {query: string, type: SearchType}): void {
+    this.bookQuery.set(value.query);
+    this.searchType.set(value.type);
     this.currentPage.set(1);
     this.loadBooks();
   }
@@ -35,7 +38,7 @@ export class HomeComponent {
   }
 
   loadBooks() {
-    this.bookService.searchBooks("title", this.bookQuery(), this.currentPage()).subscribe(
+    this.bookService.searchBooks(this.searchType(), this.bookQuery(), this.currentPage()).subscribe(
       next => {
         console.log('books:', next.docs);
         this.books.set(next.docs)
