@@ -1,9 +1,20 @@
 <form (submit)="onSubmit($event)" class="book-input">
+  <button type="button" (click)="toggleCatButton()" [class.active]="isClicked">ဗ</button>
   <input
     type="text"
     placeholder="Type a book name to search..."
     [value]="bookQuery()"
     (input)="bookQuery.set($any($event.target).value)"
   />
+
+  <select
+    [value]="searchType()" [disabled]="isSearchDisabled()"
+    (change)="searchType.set($any($event.target).value)"
+  >
+    <option value="title">Title</option>
+    <option value="subject">Subject</option>
+    <option value="author">Author</option>
+  </select>
+
   <button type="submit" [disabled]="isSearchDisabled()">Search</button>
 </form>
