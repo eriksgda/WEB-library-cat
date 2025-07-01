@@ -7,6 +7,8 @@
         (click)="onBookClick(item)"
       ></app-wishlist-card>
     }
+  } @else {
+    <p>Your wishlist is empty.</p>
   }
 
   @if (isVisible && item) {
