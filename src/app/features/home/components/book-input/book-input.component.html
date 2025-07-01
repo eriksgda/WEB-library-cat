@@ -1,5 +1,10 @@
 <form (submit)="onSubmit($event)" class="book-input">
-  <button type="button" (click)="toggleCatButton()" [class.active]="isClicked">ဗ</button>
+  <button
+    title="if pressed, you will search as a cat..."
+    type="button"
+    (click)="toggleCatButton()"
+    [class.active]="isClicked"
+  >ဗ</button>
   <input
     type="text"
     placeholder="Type a book name to search..."
