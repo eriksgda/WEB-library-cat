@@ -16,7 +16,7 @@ export class SimpleCardComponent {
   ngOnInit() {
     this.coverSrc = this.rawBook.cover_i
       ? `https://covers.openlibrary.org/b/id/${this.rawBook.cover_i}-M.jpg`
-      : 'assets/book-placeholder.jpg';
+      : 'assets/placeholder.jpg';
   }
 
   onLoad() {
@@ -25,6 +25,6 @@ export class SimpleCardComponent {
 
   onError(event: Event) {
     const cover = event.target as HTMLImageElement;
-    cover.src = 'assets/book-placeholder.jpg';
+    cover.src = 'assets/placeholder.jpg';
   }
 }

@@ -79,14 +79,14 @@ export class CardDetailsComponent {
       this.bookCoverLoaded = false;
       this.bookCoverSrc = this.book?.covers?.[0]
         ? `https://covers.openlibrary.org/b/id/${this.book.covers[0]}-L.jpg`
-        : 'assets/book-placeholder.jpg';
+        : 'assets/placeholder.jpg';
     }
 
     if (changes['author']) {
       this.authorCoverLoaded = false;
       this.authorCoverSrc = this.author?.photos?.[0]
         ? `https://covers.openlibrary.org/b/id/${this.author.photos[0]}-L.jpg`
-        : 'assets/book-placeholder.jpg';
+        : 'assets/placeholder.jpg';
     }
   }
 
@@ -100,6 +100,6 @@ export class CardDetailsComponent {
 
   onError(event: Event) {
     const cover = event.target as HTMLImageElement;
-    cover.src = 'assets/book-placeholder.jpg';
+    cover.src = 'assets/placeholder.jpg';
   }
 }
