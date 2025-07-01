@@ -1,8 +1,11 @@
 import {Component, EventEmitter, Input, Output, signal} from '@angular/core';
+import {LucideAngularModule} from 'lucide-angular';
 
 @Component({
   selector: 'app-pagination',
-  imports: [],
+  imports: [
+    LucideAngularModule
+  ],
   templateUrl: './pagination.component.html',
   styleUrl: './pagination.component.scss'
 })
