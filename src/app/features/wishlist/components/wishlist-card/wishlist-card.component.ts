@@ -1,9 +1,12 @@
 import {Component, EventEmitter, Input, Output} from '@angular/core';
 import {WishlistItemsModel} from '../../../../core/models/wishlist-items.model';
+import {LucideAngularModule} from 'lucide-angular';
 
 @Component({
   selector: 'app-wishlist-card',
-  imports: [],
+  imports: [
+    LucideAngularModule
+  ],
   templateUrl: './wishlist-card.component.html',
   styleUrl: './wishlist-card.component.scss'
 })
@@ -18,7 +21,7 @@ export class WishlistCardComponent {
   ngOnInit() {
     this.bookCoverSrc = this.item.book.covers[0]
       ? `https://covers.openlibrary.org/b/id/${this.item.book.covers[0]}-M.jpg`
-      : 'assets/book-placeholder.jpg';
+      : 'assets/placeholder.jpg';
   }
 
   onBookLoad() {
@@ -27,7 +30,7 @@ export class WishlistCardComponent {
 
   onError(event: Event) {
     const cover = event.target as HTMLImageElement;
-    cover.src = 'assets/book-placeholder.jpg';
+    cover.src = 'assets/placeholder.jpg';
   }
 
   onClick(event: MouseEvent) {

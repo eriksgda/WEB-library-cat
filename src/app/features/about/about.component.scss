@@ -5,6 +5,15 @@
   padding: 2rem 12rem;
   color: #333;
 
+  a {
+    color: #0077cc;
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
   h1 {
     font-size: 2.5rem;
     text-align: center;
@@ -20,6 +29,10 @@
       font-size: 1.5rem;
       margin-bottom: 1rem;
       color: #333;
+
+      display: flex;
+      align-items: flex-end;
+      gap: 0.5rem;
     }
 
     p {
@@ -39,19 +52,15 @@
   .about-footer {
     text-align: center;
 
-    a {
-      color: #0077cc;
-      text-decoration: none;
-
-      &:hover {
-        text-decoration: underline;
-      }
-    }
-
     .credits {
       margin-top: 1rem;
       font-size: 0.9rem;
       color: #777;
+
+      display: flex;
+      align-items: flex-start;
+      justify-content: center;
+      gap: 0.4rem;
     }
   }
 }
