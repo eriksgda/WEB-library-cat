@@ -2,47 +2,28 @@
   <h1>BiblioteCAT</h1>
 
   <section>
-    <p>
-      This is a project that consumes the <a href="https://openlibrary.org/developers/api" target="_blank">OpenLibrary API</a>.<br>
-      The idea is to practice proper API integration and build an interactive website.
-
-      BiblioteCAT allows you to search for books by different types (title, author, subject),
-      and view details like title, publication year, description, and author information.
-
-      It also features a wishlist — you can add and remove books in real time.
-      The data is saved in your browser's local storage, so no login is required.
-
-      And last but not least, the “CAT” in the name comes from the cat button on the homepage,
-      just a small touch of fun for this project.
-    </p>
+    <p [innerHTML]="'ABOUT.SECTIONS.INTRODUCTION' | translate"></p>
   </section>
 
   <section>
-    <h2><lucide-icon name="cat"></lucide-icon> Cat Button</h2>
+    <h2><lucide-icon name="cat"></lucide-icon>
+      {{ "ABOUT.SECTIONS.CAT_BUTTON.TITLE" | translate }}</h2>
     <img src="assets/cat-button.jpg" alt="Illustration of the cat button">
     <p>
-      The cat button, as you might expect, is a button — but with a twist.
-      When you press it, your search will be taken over by a cat.
-      The results? Probably something a cat would search for — not you.
-      But hey, it’s a cat button, so…
+      {{ "ABOUT.SECTIONS.CAT_BUTTON.TEXT" | translate }}
     </p>
   </section>
 
   <section>
-    <h2><lucide-icon name="search"></lucide-icon> Search Input</h2>
+    <h2><lucide-icon name="search"></lucide-icon>{{ "ABOUT.SECTIONS.SEARCH_INPUT.TITLE" | translate }}</h2>
     <img src="assets/search-input.jpg" alt="Search input example">
     <p>
-      The search input is where you type what you're looking for — a title, author, or subject.
-      Just select the type of search from the dropdown.
-
-      I recommend searching in English. Since I don’t own the API, I can’t guarantee great results in other languages.
+      {{ "ABOUT.SECTIONS.SEARCH_INPUT.TEXT" | translate }}
     </p>
   </section>
 
   <section class="about-footer">
-    <p>
-      Want to see the code? <a href="https://github.com/eriksgda/WEB-library-cat" target="_blank">Click here</a>.<br>
-      For more about me and my projects, visit my github <a href="https://github.com/eriksgda" target="_blank">profile</a>.
+    <p [innerHTML]="'ABOUT.SECTIONS.FOOTER.TEXT' | translate">
     </p>
     <p class="credits">Made with <lucide-icon name="cat" size="18"></lucide-icon> by &#64;eriksgda</p>
   </section>

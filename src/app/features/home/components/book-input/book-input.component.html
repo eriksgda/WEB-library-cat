@@ -1,7 +1,7 @@
 <form (submit)="onSubmit($event)" class="book-input">
   <button
     class="cat-button"
-    title="if pressed, you will search as a cat..."
+    [title]="'HOME.BOOK_INPUT.CAT_BUTTON.TITLE' | translate"
     type="button"
     (click)="toggleCatButton()"
     [class.active]="isClicked"
@@ -10,7 +10,7 @@
   </button>
   <input
     type="text"
-    placeholder="Type a book name to search..."
+    [placeholder]="'HOME.BOOK_INPUT.INPUT.PLACEHOLDER' | translate"
     [value]="bookQuery()"
     (input)="bookQuery.set($any($event.target).value)"
   />
@@ -19,10 +19,16 @@
     [value]="searchType()" [disabled]="isSearchDisabled()"
     (change)="searchType.set($any($event.target).value)"
   >
-    <option value="title">Title</option>
-    <option value="subject">Subject</option>
-    <option value="author">Author</option>
+    <option value="title">{{ "HOME.BOOK_INPUT.SELECT.OPTION_1" | translate }}</option>
+    <option value="subject">{{ "HOME.BOOK_INPUT.SELECT.OPTION_2" | translate }}</option>
+    <option value="author">{{ "HOME.BOOK_INPUT.SELECT.OPTION_3" | translate }}</option>
   </select>
 
-  <button class="search-button" type="submit" [disabled]="isSearchDisabled()">Search</button>
+  <button
+    class="search-button"
+    type="submit"
+    [disabled]="isSearchDisabled()"
+  >
+    {{ "HOME.BOOK_INPUT.SUBMIT_BUTTON" | translate }}
+  </button>
 </form>

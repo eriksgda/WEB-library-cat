@@ -1,10 +1,12 @@
 import { Component } from '@angular/core';
 import {LucideAngularModule} from 'lucide-angular';
+import {TranslatePipe} from '@ngx-translate/core';
 
 @Component({
   selector: 'app-about',
   imports: [
-    LucideAngularModule
+    LucideAngularModule,
+    TranslatePipe
   ],
   templateUrl: './about.component.html',
   styleUrl: './about.component.scss'

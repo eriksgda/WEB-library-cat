@@ -6,12 +6,14 @@ import {BookModel} from '../../core/models/book.model';
 import {AuthorModel} from '../../core/models/author.model';
 import {RawBookModel} from '../../core/models/raw-book.model';
 import {CardDetailsComponent} from '../../shared/card-details/card-details.component';
+import {TranslatePipe} from '@ngx-translate/core';
 
 @Component({
   selector: 'app-wishlist',
   imports: [
     WishlistCardComponent,
-    CardDetailsComponent
+    CardDetailsComponent,
+    TranslatePipe
   ],
   templateUrl: './wishlist.component.html',
   styleUrl: './wishlist.component.scss'

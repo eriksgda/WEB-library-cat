@@ -1,3 +1,12 @@
 @use "base/base";
 @use "layout/header";
 @use "layout/grid";
+
+a {
+  color: #0077cc;
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}

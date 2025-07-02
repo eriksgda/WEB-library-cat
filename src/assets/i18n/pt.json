@@ -1,0 +1,50 @@
+{
+  "HEADER": {
+    "NAV": {
+      "OPTION_1": "Sobre",
+      "OPTION_2": "Início",
+      "OPTION_3": "Desejos"
+    }
+  },
+  "ABOUT": {
+    "SECTIONS": {
+      "INTRODUCTION": "Este é um projeto que utiliza a <a href=\"https://openlibrary.org/developers/api\" target=\"_blank\">API do OpenLibrary</a>.<br>\n      A ideia é praticar integrações adequadas com uma API e construir um site interativo.\n\n      O BiblioteCAT permite que você pesquise livros por diferentes tipos (título, autor, assunto)\n      e veja detalhes como título, ano de publicação, descrição e informações do autor.\n\n      Também possui uma lista de desejos — você pode adicionar e remover livros em tempo real.\n      Os dados são salvos no armazenamento local do seu navegador, então não é necessário login.\n\n      E por fim, o “CAT” no nome vem do botão gato na página inicial,\n      apenas um pequena piada para este projeto.",
+      "CAT_BUTTON": {
+        "TITLE": " Botão Gato",
+        "TEXT": "O botão gato, como você deve imaginar, é um botão — mas com um toque especial.\n      Quando você o pressiona, sua busca será feita por um gato.\n      Os resultados? Provavelmente algo que um gato procuraria — não você.\n      Mas olhe bem, é um botão gato, então…"
+      },
+      "SEARCH_INPUT": {
+        "TITLE": " Campo de Busca",
+        "TEXT": "O campo de busca é onde você digita o que está procurando — um título, autor ou assunto.\n      Basta selecionar o tipo de busca no menu suspenso.\n\n      Recomendo pesquisar em inglês. Como eu não sou o dono da API, não posso garantir bons resultados em outros idiomas."
+      },
+      "FOOTER": {
+        "TEXT": "Quer ver o código? <a href=\"https://github.com/eriksgda/WEB-library-cat\" target=\"_blank\">Clique aqui</a>.<br>\n      Para saber mais sobre mim e meus projetos, visite meu <a href=\"https://github.com/eriksgda\" target=\"_blank\">perfil no GitHub</a>."
+      }
+    }
+  },
+  "HOME": {
+    "BOOK_INPUT": {
+      "CAT_BUTTON": {
+        "TITLE": "Se pressionado, você buscará como um gato..."
+      },
+      "INPUT": {
+        "PLACEHOLDER": "Digite o nome de um livro para buscar..."
+      },
+      "SELECT": {
+        "OPTION_1": "Título",
+        "OPTION_2": "Assunto",
+        "OPTION_3": "Autor"
+      },
+      "SUBMIT_BUTTON": "Buscar"
+    }
+  },
+  "WISHLIST": {
+    "EMPTY_TEXT": "Sua lista de desejos está vazia."
+  },
+  "CARD_DETAILS": {
+    "BUTTONS": {
+      "ADD": "Adicionar em Desejos",
+      "REMOVE": "Remover de Desejos"
+    }
+  }
+}

@@ -3,10 +3,13 @@ import {BookModel} from '../../core/models/book.model';
 import {AuthorModel} from '../../core/models/author.model';
 import {WishlistService} from '../../infrastructure/storage/wishlist.service';
 import {WishlistItemsModel} from '../../core/models/wishlist-items.model';
+import {TranslatePipe} from '@ngx-translate/core';
 
 @Component({
   selector: 'app-card-details',
-  imports: [],
+  imports: [
+    TranslatePipe
+  ],
   templateUrl: './card-details.component.html',
   styleUrl: './card-details.component.scss'
 })

@@ -1,0 +1,50 @@
+{
+  "HEADER" : {
+    "NAV" : {
+      "OPTION_1": "About",
+      "OPTION_2": "Home",
+      "OPTION_3": "Wishlist"
+    }
+  },
+  "ABOUT" : {
+    "SECTIONS" : {
+      "INTRODUCTION" : "This is a project that consumes the <a href=\"https://openlibrary.org/developers/api\" target=\"_blank\">OpenLibrary API</a>.<br>\n      The idea is to practice proper API integration and build an interactive website.\n\n      BiblioteCAT allows you to search for books by different types (title, author, subject),\n      and view details like title, publication year, description, and author information.\n\n      It also features a wishlist — you can add and remove books in real time.\n      The data is saved in your browser's local storage, so no login is required.\n\n      And last but not least, the “CAT” in the name comes from the cat button on the homepage,\n      just a small touch of fun for this project.",
+      "CAT_BUTTON" : {
+        "TITLE" : " Cat Button",
+        "TEXT": "The cat button, as you might expect, is a button — but with a twist.\n      When you press it, your search will be taken over by a cat.\n      The results? Probably something a cat would search for — not you.\n      But hey, it’s a cat button, so…"
+      },
+      "SEARCH_INPUT": {
+        "TITLE" : " Search Input",
+        "TEXT" : "The search input is where you type what you're looking for — a title, author, or subject.\n      Just select the type of search from the dropdown.\n\n      I recommend searching in English. Since I don’t own the API, I can’t guarantee great results in other languages."
+      },
+      "FOOTER" : {
+        "TEXT" : "Want to see the code? <a href=\"https://github.com/eriksgda/WEB-library-cat\" target=\"_blank\">Click here</a>.<br>\n      For more about me and my projects, visit my github <a href=\"https://github.com/eriksgda\" target=\"_blank\">profile</a>."
+      }
+    }
+  },
+  "HOME" : {
+    "BOOK_INPUT" : {
+      "CAT_BUTTON" : {
+        "TITLE": "If pressed, you will search as a cat..."
+      },
+      "INPUT" : {
+        "PLACEHOLDER" : "Type a book name to search..."
+      },
+      "SELECT" : {
+        "OPTION_1" : "Title",
+        "OPTION_2" : "Subject",
+        "OPTION_3" : "Author"
+      },
+      "SUBMIT_BUTTON" : "Search"
+    }
+  },
+  "WISHLIST": {
+    "EMPTY_TEXT" : "Your wishlist is empty."
+  },
+  "CARD_DETAILS": {
+    "BUTTONS": {
+      "ADD": "Add to Wishlist",
+      "REMOVE": "Remove from Wishlist"
+    }
+  }
+}

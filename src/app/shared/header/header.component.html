@@ -5,11 +5,11 @@
   </div>
   <nav class="nav-container">
     <span>|</span>
-    <a routerLink="/about" routerLinkActive="active-link">About</a>
+    <a routerLink="/about" routerLinkActive="active-link">{{ "HEADER.NAV.OPTION_1" | translate }}</a>
     <span>|</span>
-    <a routerLink="/home" routerLinkActive="active-link">Home</a>
+    <a routerLink="/home" routerLinkActive="active-link">{{ "HEADER.NAV.OPTION_2" | translate }}</a>
     <span>|</span>
-    <a routerLink="/wishlist" routerLinkActive="active-link">Wishlist</a>
+    <a routerLink="/wishlist" routerLinkActive="active-link">{{ "HEADER.NAV.OPTION_3" | translate }}</a>
   </nav>
-  <button>TOGGLE LANGUAGE</button>
+  <button (click)="toggleLanguage()">LAN</button>
 </header>

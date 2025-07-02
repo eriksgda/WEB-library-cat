@@ -2,11 +2,13 @@ import {Component, computed, EventEmitter, Output, signal} from '@angular/core';
 import {SearchType} from '../../../../core/models/search-type.enum';
 import {CatSearch} from '../../../../core/models/cat.enum';
 import {LucideAngularModule} from 'lucide-angular';
+import {TranslatePipe} from '@ngx-translate/core';
 
 @Component({
   selector: 'app-book-input',
   imports: [
-    LucideAngularModule
+    LucideAngularModule,
+    TranslatePipe
   ],
   templateUrl: './book-input.component.html',
   styleUrl: './book-input.component.scss'
