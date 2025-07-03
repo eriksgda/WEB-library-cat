@@ -13,4 +13,5 @@ import {TranslatePipe} from '@ngx-translate/core';
 })
 export class AboutComponent {
 
+  protected readonly window = window;
 }

@@ -16,7 +16,12 @@
 
   <section>
     <h2><lucide-icon name="search"></lucide-icon>{{ "ABOUT.SECTIONS.SEARCH_INPUT.TITLE" | translate }}</h2>
-    <img src="assets/search-input.jpg" alt="Search input example">
+    @if (window.innerWidth > 900) {
+      <img src="assets/search-input.jpg" alt="Search input example">
+    } @else {
+      <img src="assets/search-input-phone.jpg" alt="Search input example">
+    }
+
     <p>
       {{ "ABOUT.SECTIONS.SEARCH_INPUT.TEXT" | translate }}
     </p>
