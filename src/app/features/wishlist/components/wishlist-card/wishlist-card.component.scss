@@ -100,3 +100,100 @@
   50% { background-color: #ddd; }
   100% { background-color: #eee; }
 }
+
+
+@media (max-width: 900px) {
+  .card-container {
+    max-height: 20rem;
+    padding: 8px;
+
+    .card-content{
+      h1{
+        font-size: 1.1rem;
+      }
+
+      h2{
+        font-size: 0.8rem;
+      }
+
+      .subjects-wrapper{
+        gap: 0.1rem;
+
+        span{
+          padding: 2px 4px;
+          font-size: 0.7rem;
+        }
+      }
+    }
+
+    .remove-button-wrapper{
+      button{
+        padding: 0.38rem;
+      }
+    }
+  }
+}
+
+@media (min-width: 500px) and (max-width: 768px) {
+  .card-container {
+    max-height: 22rem;
+    padding: 12px;
+
+    .card-content{
+      h1{
+        font-size: 1.3rem;
+      }
+
+      h2{
+        font-size: 1rem;
+      }
+
+      .subjects-wrapper{
+        gap: 0.4rem;
+
+        span{
+          padding: 4px 8px;
+          font-size: 0.7rem;
+        }
+      }
+    }
+
+    .remove-button-wrapper{
+      button{
+        padding: 0.4rem;
+      }
+    }
+  }
+}
+
+@media (max-width: 499px) {
+  .card-container {
+    max-height: 20rem;
+    padding: 6px;
+
+    .card-content{
+      h1{
+        font-size: 0.8rem;
+      }
+
+      h2{
+        font-size: 0.6rem;
+      }
+
+      .subjects-wrapper{
+        gap: 0.2rem;
+
+        span{
+          padding: 1px 2px;
+          font-size: 0.52rem;
+        }
+      }
+    }
+
+    .remove-button-wrapper{
+      button{
+        padding: 0.2rem;
+      }
+    }
+  }
+}
