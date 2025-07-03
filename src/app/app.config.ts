@@ -3,7 +3,17 @@ import { provideRouter } from '@angular/router';
 
 import { routes } from './app.routes';
 import {HttpClient, provideHttpClient} from '@angular/common/http';
-import {Cat, LucideAngularModule, Search, Trash, ChevronRight, ChevronLeft, ChevronsRight, ChevronsLeft } from 'lucide-angular';
+import {
+  Cat,
+  LucideAngularModule,
+  Search,
+  Trash,
+  ChevronRight,
+  ChevronLeft,
+  ChevronsRight,
+  ChevronsLeft,
+  Menu, X, Languages
+} from 'lucide-angular';
 import {TranslateHttpLoader} from '@ngx-translate/http-loader';
 import {TranslateLoader, TranslateModule} from '@ngx-translate/core';
 
@@ -17,7 +27,7 @@ export const appConfig: ApplicationConfig = {
     provideRouter(routes),
     provideHttpClient(),
     importProvidersFrom(LucideAngularModule.pick(
-      { Cat, Search, Trash, ChevronRight, ChevronLeft, ChevronsRight, ChevronsLeft })),
+      { Cat, Search, Trash, ChevronRight, ChevronLeft, ChevronsRight, ChevronsLeft, Menu, X, Languages })),
     importProvidersFrom(
       TranslateModule.forRoot({
         defaultLanguage: 'en',
