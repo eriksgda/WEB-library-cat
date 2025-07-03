@@ -1,15 +1,31 @@
 <header  class="header-container">
-  <div class="logo-container">
-    <img src="assets/logo.jpg" alt="teste" class="logo">
-    <h1>BiblioteCAT</h1>
+  <div class="menu-container">
+    <button class="menu-button" (click)="toggleMenu()">
+      @if (isMenuOpen) {
+        <lucide-icon name="x" color="white"></lucide-icon>
+      } @else {
+        <lucide-icon name="menu" color="white"></lucide-icon>
+      }
+    </button>
+    <div class="logo-wrapper">
+      <img src="assets/logo.jpg" alt="teste" class="logo">
+      <h1>BiblioteCAT</h1>
+    </div>
   </div>
-  <nav class="nav-container">
+  <nav class="nav-container" [class.open]="isMenuOpen">
     <span>|</span>
-    <a routerLink="/about" routerLinkActive="active-link">{{ "HEADER.NAV.OPTION_1" | translate }}</a>
+    <a routerLink="/about" routerLinkActive="active-link" (click)="closeMenu()">{{ "HEADER.NAV.OPTION_1" | translate }}</a>
     <span>|</span>
-    <a routerLink="/home" routerLinkActive="active-link">{{ "HEADER.NAV.OPTION_2" | translate }}</a>
+    <a routerLink="/home" routerLinkActive="active-link" (click)="closeMenu()">{{ "HEADER.NAV.OPTION_2" | translate }}</a>
     <span>|</span>
-    <a routerLink="/wishlist" routerLinkActive="active-link">{{ "HEADER.NAV.OPTION_3" | translate }}</a>
+    <a routerLink="/wishlist" routerLinkActive="active-link" (click)="closeMenu()">{{ "HEADER.NAV.OPTION_3" | translate }}</a>
   </nav>
-  <button (click)="toggleLanguage()">LAN</button>
+
+  <button class="language-button" (click)="toggleLanguage()">
+    <lucide-icon name="languages" color="white"></lucide-icon>
+  </button>
+
+  @if (isMenuOpen) {
+    <div class="overlay" (click)="closeMenu()"></div>
+  }
 </header>
