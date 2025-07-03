@@ -4,12 +4,44 @@
   justify-content: center;
   gap: 1rem;
 
-  margin: 2.5rem;
+  margin: 2rem;
 }
 
 .books-container {
+  width: 100%;
   display: flex;
   flex-direction: row;
 
   justify-content: space-around;
+}
+
+@media (max-width: 900px) {
+  .book-input {
+    gap: 0.5rem;
+    margin: 1rem 1rem 0.5rem;
+  }
+
+  .books-container {
+    flex-direction: column;
+    overflow-y: auto;
+
+    align-items: center;
+
+    height: 62vh;
+    gap: 1rem;
+
+    padding: 1rem 0;
+
+    -webkit-overflow-scrolling: touch;
+  }
+}
+
+@media (min-width: 900px) and (max-width: 1300px) {
+  .book-input {
+    gap: 0.5rem;
+  }
+
+  .books-container {
+    height: 55vh;
+  }
 }

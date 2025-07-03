@@ -1,13 +1,4 @@
 <form (submit)="onSubmit($event)" class="book-input">
-  <button
-    class="cat-button"
-    [title]="'HOME.BOOK_INPUT.CAT_BUTTON.TITLE' | translate"
-    type="button"
-    (click)="toggleCatButton()"
-    [class.active]="isClicked"
-  >
-    <lucide-icon name="Cat" size="32"></lucide-icon>
-  </button>
   <input
     type="text"
     [placeholder]="'HOME.BOOK_INPUT.INPUT.PLACEHOLDER' | translate"
@@ -15,20 +6,33 @@
     (input)="bookQuery.set($any($event.target).value)"
   />
 
-  <select
-    [value]="searchType()" [disabled]="isSearchDisabled()"
-    (change)="searchType.set($any($event.target).value)"
-  >
-    <option value="title">{{ "HOME.BOOK_INPUT.SELECT.OPTION_1" | translate }}</option>
-    <option value="subject">{{ "HOME.BOOK_INPUT.SELECT.OPTION_2" | translate }}</option>
-    <option value="author">{{ "HOME.BOOK_INPUT.SELECT.OPTION_3" | translate }}</option>
-  </select>
+  <div class="action-buttons">
+    <button
+      class="cat-button"
+      [title]="'HOME.BOOK_INPUT.CAT_BUTTON.TITLE' | translate"
+      type="button"
+      (click)="toggleCatButton()"
+      [class.active]="isClicked"
+    >
+      <lucide-icon name="Cat" size="32"></lucide-icon>
+    </button>
 
-  <button
-    class="search-button"
-    type="submit"
-    [disabled]="isSearchDisabled()"
-  >
-    {{ "HOME.BOOK_INPUT.SUBMIT_BUTTON" | translate }}
-  </button>
+
+    <select
+      [value]="searchType()" [disabled]="isSearchDisabled()"
+      (change)="searchType.set($any($event.target).value)"
+    >
+      <option value="title">{{ "HOME.BOOK_INPUT.SELECT.OPTION_1" | translate }}</option>
+      <option value="subject">{{ "HOME.BOOK_INPUT.SELECT.OPTION_2" | translate }}</option>
+      <option value="author">{{ "HOME.BOOK_INPUT.SELECT.OPTION_3" | translate }}</option>
+    </select>
+
+    <button
+      class="search-button"
+      type="submit"
+      [disabled]="isSearchDisabled()"
+    >
+      {{ "HOME.BOOK_INPUT.SUBMIT_BUTTON" | translate }}
+    </button>
+  </div>
 </form>

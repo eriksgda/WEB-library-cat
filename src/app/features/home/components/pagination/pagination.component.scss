@@ -30,3 +30,11 @@
     }
   }
 }
+
+@media (max-width: 900px) {
+  :host {
+    margin-top: 0;
+
+    padding-top: 1rem;
+  }
+}
