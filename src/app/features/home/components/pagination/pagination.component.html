@@ -1,5 +1,5 @@
 <button (click)="firstPage()" [disabled]="currentPage() === 1"><lucide-icon name="chevrons-left"></lucide-icon></button>
 <button (click)="prevPage()" [disabled]="currentPage() === 1"><lucide-icon name="chevron-left"></lucide-icon></button>
 <span>{{ currentPage() }}</span>
-<button (click)="nextPage()" [disabled]="currentPage() === MAX_PAGE"><lucide-icon name="chevron-left"></lucide-icon></button>
+<button (click)="nextPage()" [disabled]="currentPage() === MAX_PAGE"><lucide-icon name="chevron-right"></lucide-icon></button>
 <button (click)="lastPage()" [disabled]="currentPage() === MAX_PAGE"><lucide-icon name="chevrons-right"></lucide-icon></button>
