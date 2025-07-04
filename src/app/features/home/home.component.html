@@ -2,7 +2,7 @@
   <app-book-input (valueSubmit)="onValueReceived($event)"></app-book-input>
 
   @if (books().length !== 0) {
-    <div class="books-container">
+    <div class="books-container" #booksContainer>
       @for (book of books(); track book.key) {
         <app-simple-card
           [rawBook]="book"

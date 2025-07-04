@@ -1,4 +1,4 @@
-import {Component, signal} from '@angular/core';
+import {Component, ElementRef, signal, SimpleChanges, ViewChild} from '@angular/core';
 import {RawBookModel} from '../../core/models/raw-book.model';
 import {BooksService} from '../../core/services/books.service';
 import {BookInputComponent} from './components/book-input/book-input.component';
@@ -31,10 +31,19 @@ export class HomeComponent {
     this.loadBooks();
   }
 
+  @ViewChild("booksContainer") booksContainer!: ElementRef;
+
   onPageChange(page: number) {
     this.currentPage.set(page);
 
     this.loadBooks();
+
+    setTimeout(() => {
+      this.booksContainer.nativeElement.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    })
   }
 
   loadBooks() {
