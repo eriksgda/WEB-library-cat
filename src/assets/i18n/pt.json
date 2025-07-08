@@ -4,6 +4,9 @@
       "OPTION_1": "Sobre",
       "OPTION_2": "Início",
       "OPTION_3": "Desejos"
+    },
+    "LANGUAGE_BUTTON": {
+      "TITLE": "Se clicado, você irá mudar a língua atual para Inglês"
     }
   },
   "ABOUT": {

@@ -21,7 +21,7 @@
     <a routerLink="/wishlist" routerLinkActive="active-link" (click)="closeMenu()">{{ "HEADER.NAV.OPTION_3" | translate }}</a>
   </nav>
 
-  <button class="language-button" (click)="toggleLanguage()">
+  <button class="language-button" (click)="toggleLanguage()" [title]="'HEADER.LANGUAGE_BUTTON.TITLE' | translate">
     <lucide-icon name="languages" color="white"></lucide-icon>
   </button>
 

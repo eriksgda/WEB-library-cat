@@ -4,6 +4,9 @@
       "OPTION_1": "About",
       "OPTION_2": "Home",
       "OPTION_3": "Wishlist"
+    },
+    "LANGUAGE_BUTTON": {
+      "TITLE": "If clicked, you will toggle the current language to portuguese"
     }
   },
   "ABOUT" : {
